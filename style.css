@@ -1,0 +1,38 @@
+/* Estilos para o slider principal */
+.slider-container {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    display: none;
+}
+
+/* Estilos para as miniaturas */
+.thumbnails {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.thumbnails img {
+    width: 100px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* Estilo para a imagem ampliada */
+.enlarged-image {
+    display: none;
+    text-align: center;
+}
+
+.enlarged-image img {
+    max-width: 100%;
+}
