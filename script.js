@@ -1,43 +1,30 @@
-// JavaScript para controlar o slider de fotos
+document.addEventListener("DOMContentLoaded", function () {
+    const categorias = document.querySelectorAll(".categoria");
+    const galeria = document.querySelector(".galeria");
 
-const sliderImages = document.querySelectorAll(".slider img");
-const thumbnailImages = document.querySelectorAll(".thumbnails img");
-const enlargedImage = document.querySelector(".enlarged-image img");
+    categorias.forEach(function (categoria) {
+        categoria.addEventListener("click", function () {
+            // Remove a classe 'ativa' de todas as categorias
+            categorias.forEach(function (cat) {
+                cat.classList.remove("ativa");
+            });
 
-let currentIndex = 0;
+            // Adiciona a classe 'ativa' à categoria clicada
+            categoria.classList.add("ativa");
 
-function showImage(index) {
-    sliderImages.forEach((img) => (img.style.display = "none"));
-    sliderImages[index].style.display = "block";
-}
+            // Obtém a categoria selecionada
+            const categoriaSelecionada = categoria.getAttribute("data-categoria");
 
-function showEnlargedImage(index) {
-    enlargedImage.src = sliderImages[index].src;
-}
-
-thumbnailImages.forEach((thumbnail, index) => {
-    thumbnail.addEventListener("click", () => {
-        currentIndex = index;
-        showImage(currentIndex);
-        showEnlargedImage(currentIndex);
+            // Mostra apenas os produtos da categoria selecionada e "todos"
+            const produtos = document.querySelectorAll(".galeria img");
+            produtos.forEach(function (produto) {
+                const categoriaProduto = produto.getAttribute("data-categoria");
+                if (categoriaSelecionada === "todos" || categoriaSelecionada === categoriaProduto) {
+                    produto.style.display = "block";
+                } else {
+                    produto.style.display = "none";
+                }
+            });
+        });
     });
 });
-
-function nextImage() {
-    currentIndex = (currentIndex + 1) % sliderImages.length;
-    showImage(currentIndex);
-    showEnlargedImage(currentIndex);
-}
-
-function prevImage() {
-    currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
-    showImage(currentIndex);
-    showEnlargedImage(currentIndex);
-}
-
-showImage(currentIndex);
-showEnlargedImage(currentIndex);
-
-// Adicionar eventos para os botões de próxima e anterior
-document.querySelector("#next").addEventListener("click", nextImage);
-document.querySelector("#prev").addEventListener("click", prevImage);

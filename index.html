@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider de Fotos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Galeria de Produtos</title>
 </head>
 <body>
-    <div class="slider-container">
-        <div class="slider">
-            <img src="imagem1.jpg" alt="Imagem 1">
-            <img src="imagem2.jpg" alt="Imagem 2">
-            <img src="imagem3.jpg" alt="Imagem 3">
-            <img src="imagem4.jpg" alt="Imagem 4">
-        </div>
-        <div class="thumbnails">
-            <img src="imagem1.jpg" alt="Miniatura 1">
-            <img src="imagem2.jpg" alt="Miniatura 2">
-            <img src="imagem3.jpg" alt="Miniatura 3">
-            <img src="imagem4.jpg" alt="Miniatura 4">
-        </div>
-        <div class="enlarged-image">
-            <img src="" alt="Imagem Ampliada">
-        </div>
+    <h1 class="title">Galeria de Produtos</h1>
+
+    <!-- Lista de Categorias -->
+    <ul class="categorias">
+        <li data-categoria="todos" class="categoria ativa">Todos</li>
+        <li data-categoria="eletronicos" class="categoria">Logos</li>
+        <li data-categoria="vestuario" class="categoria">Artes redes sociais</li>
+        <li data-categoria="acessorios" class="categoria">Capas de Carnê</li>
+        <li data-categoria="todos" class="categoria">Cartões</li>
+        <li data-categoria="eletronicos" class="categoria">Envelopes</li>
+        <li data-categoria="vestuario" class="categoria">Pastas</li>
+        <li data-categoria="acessorios" class="categoria">Papael Timbrado</li>
+        <li data-categoria="acessorios" class="categoria">Receituarios</li>
+    </ul>
+
+    <!-- Galeria de Produtos -->
+    <div class="galeria">
+        
+        <img src="produto1.jpg" alt="Produto 1" data-categoria="eletronicos">
+        <img src="produto4.jpg" alt="Produto 1" data-categoria="vestuario">
+        <img src="produto2.jpg" alt="Produto 2" data-categoria="eletronicos">
+        <img src="produto5.jpg" alt="Produto 2" data-categoria="acessorios">
+        <img src="produto3.jpg" alt="Produto 3" data-categoria="acessorios">
+        <img src="produto1.jpg" alt="Produto 1" data-categoria="eletronicos">
+        <img src="produto4.jpg" alt="Produto 1" data-categoria="vestuario">
+        <img src="produto2.jpg" alt="Produto 2" data-categoria="eletronicos">
+        <img src="produto5.jpg" alt="Produto 2" data-categoria="acessorios">
+        <img src="produto3.jpg" alt="Produto 3" data-categoria="acessorios">
+            
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
